@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "com.users";
+option java_multiple_files = true;
+
+package com.users;
+
+import "google/rpc/status.proto";
+
+service UserRegistration {
+  rpc registerCustomer (CustomerRegistrationRequest) returns (google.rpc.Status) {}
+}
+
+message CustomerRegistrationRequest {
+    string email = 1;
+    string phoneNumber = 2;
+    string fullName = 3;
+    string password = 4;
+}
+
